@@ -2,8 +2,8 @@ function createNode(element) {
     return document.createElement(element);
 }
 
-function append(parent, el) {
-    return parent.appendChild(el);
+function append(parent, element) {
+    return parent.appendChild(element);
 }
 
 const body = document.body;
