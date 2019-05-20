@@ -1,6 +1,5 @@
 // Init Weather, UI, Storage Object
 
-console.log('veera');
 const storage = new Storage();
 const weatherLocation = storage.getLocationData();
 
@@ -8,7 +7,7 @@ const weather = new Weather(weatherLocation.city);
 const ui = new UI();
 
 const updateCityBtn = document.getElementById('updateCityBtn');
-
+console.log(updateCityBtn);
 updateCityBtn.addEventListener('click', event => {
     event.preventDefault();
     const updateCity = document.getElementById('updateCity').value;
