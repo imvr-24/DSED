@@ -17,7 +17,7 @@ class UI {
         this.info.textContent = `Weather condition : ${weather.weather[0].description}`;
         this.humidity.textContent = `Relative Humidity: ${weather.main.humidity}`;
         this.pressure.textContent = `Atmospheric pressure : ${weather.main.pressure}`;
-        this.weatherCoordinates.textContent = ` latitude and longitude of ${this.location.innerHTML} are : ${weather.coord.lon} ${weather.coord.lat}`;
+        this.weatherCoordinates.textContent = `latitude and longitude of ${this.location.innerHTML} are : ${weather.coord.lon} ${weather.coord.lat}`;
         this.wind.textContent = `Wind Speed :${weather.wind.speed}`;
     }
 

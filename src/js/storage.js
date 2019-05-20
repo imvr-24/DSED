@@ -16,7 +16,7 @@ class Storage {
 
         return {
             city: this.city
-        }
+        };
     }
 
     setLocationData(city) {

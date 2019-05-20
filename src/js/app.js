@@ -32,8 +32,9 @@ document.getElementById('weather__Change__btn').addEventListener('click', (e) =>
 
     storage.setLocationData(city);
     getWeather();
+    clearInput(document.getElementById('city'));
     $('#locationModal').modal('hide');
-})
+});
 
 function getWeather() {
     weather.getWeather()
