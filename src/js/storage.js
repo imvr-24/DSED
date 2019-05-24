@@ -7,7 +7,7 @@ export default class Storage {
     getLocationData() {
         if (localStorage.getItem('city') === null) {
             this.city = this.defaultCity;
-            alert(this.city);
+            // alert(this.city);
         } else {
             this.city = localStorage.getItem('city');
             console.log(this.city);

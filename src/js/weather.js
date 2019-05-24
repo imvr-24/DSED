@@ -7,10 +7,10 @@ export class Weather {
     // Fetch Weather from api.
 
     async getWeather() {
-        const response = await fetch(`${this.BASE_URL}${this.city}&appid=${this.API_KEY}`);
+        const response = await fetch(`${this.BASE_URL}${this.city}&appid=${this.API_KEY}&units=metric`);
         // const response1 = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=London&appid=ddc2c672ba85e86fb279c29bb685edd1`);
         const responseData = await response.json();
-
+        console.log(responseData);
         return responseData;
     }
 

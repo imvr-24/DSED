@@ -9,7 +9,11 @@ const storage = new Storage();
 const weatherLocation = storage.getLocationData();
 
 const weather = new Weather(weatherLocation.city);
-getWeather()
+console.log(weather.getWeather('england').then(data =>
+    ui.initUI(data)
+    // data => console.log(data)
+)
+.catch(error => alert(`Error`)));
 
 const ui = new UI();
 
