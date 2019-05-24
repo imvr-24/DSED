@@ -66,7 +66,7 @@ function main() {
     <h2 class="bg-light rounded-pill badge" id="weather__location"></h2>
     <h3 class="text-light" id="weather__desc"></h3>
     <h3 id="weather__info" class="text-white"></h3>
-    <img id="weather__icon" src="" alt="">
+    <img id="weather__icon">
     <ul class="list-group mt-3" id="weather__details">
         <li class="list-group-item" id="weather__humidity"></li>
         <li class="list-group-item" id="weather__pressure"></li>
@@ -126,4 +126,6 @@ const initContent = () => {
 
 // document.addEventListener('DOMContentLoaded',initContent );
 
-window.onload = initContent();
+export const onWindowLoad =  function onLoad() {
+    window.onload = initContent();   
+};
