@@ -2,6 +2,7 @@
 export class UI {
     constructor() {
         this.location = document.getElementById('weather__location');
+        console.log(this.location);
         this.desc = document.getElementById('weather__desc');
         this.info = document.getElementById('weather__info');
         this.icon = document.getElementById('weather__icon');

@@ -1,14 +1,14 @@
-function createNode(element) {
+const createNode = (element) => {
     return document.createElement(element);
-}
+};
 
-function append(parent, element) {
+const append = (parent, element) => {
     return parent.appendChild(element);
-}
+};
 
 const body = document.body;
 
-function header() {
+const header = () => {
     let header = createNode('header'),
         divContainer = createNode('div');
 
@@ -36,10 +36,10 @@ function header() {
     </div>`;
     console.log(getHeader);
     console.log(this);
-}
+};
 
 
-function main() {
+const main = () => {
     let main = createNode('main'),
         section = createNode('section'),
         row = createNode('row');
@@ -79,9 +79,9 @@ function main() {
     </button>
 </div>`;
     console.log(getMain);
-}
+};
 
-function loadModal() {
+const loadModal = () => {
     let modal = createNode('div');
     modal.setAttribute('class', 'modal fade');
     modal.setAttribute('id', 'locationModal');
@@ -115,7 +115,7 @@ function loadModal() {
         </div>
     </div>`;
     console.log(getModal);
-}
+};
 
 
 const initContent = () => {
@@ -126,6 +126,6 @@ const initContent = () => {
 
 // document.addEventListener('DOMContentLoaded',initContent );
 
-export const onWindowLoad =  function onLoad() {
-    window.onload = initContent();   
+export const onWindowLoad = () => {
+    window.onload = initContent();
 };

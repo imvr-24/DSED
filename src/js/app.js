@@ -7,15 +7,16 @@ import {Weather} from './weather.js';
 onWindowLoad();
 const storage = new Storage();
 const weatherLocation = storage.getLocationData();
-
-const weather = new Weather(weatherLocation.city);
-console.log(weather.getWeather('england').then(data =>
-    ui.initUI(data)
-    // data => console.log(data)
-)
-.catch(error => alert(`Error`)));
-
 const ui = new UI();
+const weather = new Weather(weatherLocation.city);
+
+// console.log(weather.getWeather('england').then(data =>
+//     ui.initUI(data)
+//     // data => console.log(data)
+// )
+// .catch(error => alert(`Error`)));
+
+
 
 const updateCityBtn = document.getElementById('updateCityBtn');
 console.log(updateCityBtn);
@@ -25,7 +26,6 @@ updateCityBtn.addEventListener('click', event => {
 
     if(updateCity !== '' && updateCity.length>0) {
         weather.changeLocation(updateCity);
-        // weather.changeLocation('india');
         storage.setLocationData(updateCity);
         getWeather();
         clearInput(document.getElementById('updateCity'));
