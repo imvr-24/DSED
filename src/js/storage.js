@@ -1,4 +1,4 @@
-export default class Storage {
+class Storage {
     constructor() {
         this.city;
         this.defaultCity = 'Guntur';
@@ -23,3 +23,4 @@ export default class Storage {
         localStorage.setItem('city', city);
     }
 }
+export default Storage;
