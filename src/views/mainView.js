@@ -51,7 +51,7 @@ const main = () => {
     body.append(main);
     const getMain = document.querySelector('.row');
     getMain.innerHTML = `
-    <div class="col-md-4 text-center bg-custom mt-5 p-5 " id="updateCityEl">
+<div class="col-md-3 text-center bg-custom mt-5 p-5 " id="updateCityEl">
     <form>
         <div class="form-group">
             <label for="updateCity">City Name</label>
@@ -62,7 +62,7 @@ const main = () => {
 </div>
 
 <div class="col-md-4 mx-auto text-center bg-primary mt-5 p-5 ">
-    <h1 class="text-white badge">weather data</h1>
+    <h1 class="text-white badge">Weather data</h1>
     <h2 class="bg-light rounded-pill badge" id="weather__location"></h2>
     <h3 class="text-light" id="weather__desc"></h3>
     <h3 id="weather__info" class="text-white"></h3>
@@ -77,8 +77,42 @@ const main = () => {
     <button type="button" class="btn btn-info" id="" data-toggle="modal" data-target="#locationModal">
         Change Location
     </button>
-</div>`;
+</div>
+
+<div class="col-md-4 mx-auto text-center bg-primary mt-5 p-5 ">
+    <h1 class="text-white badge">Random forecast</h1>
+    <h2 class="bg-light rounded-pill badge" id="forecast__location"></h2>
+    <h3 class="text-light" id="forecast__desc"></h3>
+    <h3 id="forecast__info" class="text-white"></h3>
+    <img id="forecast__icon">
+    <ul class="list-group mt-3">
+        <li class="list-group-item" id="temp_min"></li>
+        <li class="list-group-item" id="temp_max"></li>
+        <li class="list-group-item" id="rain__volume__3h"></li>
+        <li class="list-group-item" id="date_time_utc"></li>
+    </ul>
+    <hr>
+    <button type="button" class="btn btn-info" id="" data-toggle="modal" data-target="#locationModal">
+        Change Location
+    </button>
+</div>
+
+
+`;
     console.log(getMain);
+};
+
+const footer = () => {
+    let footerEl = createNode('footer');
+    footerEl.setAttribute('class', 'footer mt-auto py-3');
+    body.appendChild(footerEl);
+
+    const getFooter = document.querySelector('.footer');
+    getFooter.innerHTML = `
+        <div class="container">
+            <p class="text-muted">Place sticky footer content here.</p>
+        </div>
+    `;
 };
 
 const loadModal = () => {
@@ -122,10 +156,16 @@ const initContent = () => {
     header();
     main();
     loadModal();
+    // footer();
 };
 
 // document.addEventListener('DOMContentLoaded',initContent );
 
-export const onWindowLoad = () => {
+const initializeView = () => {
     window.onload = initContent();
+};
+
+
+export {
+    initializeView
 };

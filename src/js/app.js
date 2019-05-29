@@ -1,28 +1,16 @@
 // Init Weather, UI, Storage Object
-import {
-    onWindowLoad
-} from "./main.js";
+import { initializeView } from "../views/mainView.js";
 import Storage from './storage.js';
-import {
-    UI
-} from './ui.js';
-import {
-    Weather
-} from './weather.js';
+import { UI } from '../views/fillMainView.js';
+import { Weather } from './weather.js';
 
-onWindowLoad();
+
+initializeView();
+
 const storage = new Storage();
 const weatherLocation = storage.getLocationData();
 const ui = new UI();
 const weather = new Weather(weatherLocation.city);
-
-// console.log(weather.getWeather('england').then(data =>
-//     ui.initUI(data)
-//     // data => console.log(data)
-// )
-// .catch(error => alert(`Error`)));
-
-
 
 const updateCityBtn = document.getElementById('updateCityBtn');
 console.log(updateCityBtn);
@@ -47,7 +35,6 @@ const clearInput = (e) => {
 
 // document.addEventListener('DOMContentLoaded', getWeather);
 
-
 document.getElementById('weather__Change__btn').addEventListener('click', (e) => {
     const city = document.getElementById('city').value;
 
@@ -67,8 +54,17 @@ const getWeather = () => {
     weather.getWeather()
         .then(data => {
             console.log(data);
-            ui.initUI(data)}
-            // data => console.log(data)
-        )
+            ui.initUI(data);
+        })
         .catch(error => alert(`City not found`));
+    weather.getHourlyForecast()
+        .then(data => {
+            console.log(data);
+            const { city, list} = data;
+            ui.fillForecast({city, list});
+        })
+        .catch(error => alert(`Citys not found`));
 };
+
+getWeather();
+// console.log(getWeather());
