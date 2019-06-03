@@ -1,0 +1,22 @@
+{
+  "name": "dsed",
+  "version": "1.0.0",
+  "description": "Weather Api: https://openweathermap.org/",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imvr-24/DSED.git"
+  },
+  "author": "imvr24",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imvr-24/DSED/issues"
+  },
+  "homepage": "https://github.com/imvr-24/DSED#readme",
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
+}

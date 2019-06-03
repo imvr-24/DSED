@@ -1,9 +1,9 @@
 // Init Weather, UI, Storage Object
-import { initializeView } from "../views/mainView.js";
+
 import Storage from './storage.js';
 import { UI } from '../views/fillMainView.js';
 import { Weather } from './weather.js';
-
+import { initializeView } from "../views/mainView.js";
 
 initializeView();
 
@@ -14,10 +14,12 @@ const weather = new Weather(weatherLocation.city);
 
 const updateCityBtn = document.getElementById('updateCityBtn');
 console.log(updateCityBtn);
+
+// document.body.innerHTML = '';
 updateCityBtn.addEventListener('click', event => {
     event.preventDefault();
     const updateCity = document.getElementById('updateCity').value;
-
+    // clearDiv(document.querySelector('.vg'));
     if (updateCity !== '' && updateCity.length > 3) {
         weather.changeLocation(updateCity);
         storage.setLocationData(updateCity);
@@ -28,6 +30,12 @@ updateCityBtn.addEventListener('click', event => {
     }
 
 });
+
+const clearDiv = (e) => {
+    if(e !== null) {
+        e.remove();
+    }
+};
 
 const clearInput = (e) => {
     e.value = '';
@@ -66,5 +74,5 @@ const getWeather = () => {
         .catch(error => alert(`Citys not found`));
 };
 
-getWeather();
+// getWeather();
 // console.log(getWeather());

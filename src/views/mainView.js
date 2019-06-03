@@ -61,7 +61,7 @@ const main = () => {
     </form>
 </div>
 
-<div class="col-md-4 mx-auto text-center bg-primary mt-5 p-5 ">
+<div class="col-md-4 mx-auto text-center bg-primary mt-5 p-5 vg">
     <h1 class="text-white badge">Weather data</h1>
     <h2 class="bg-light rounded-pill badge" id="weather__location"></h2>
     <h3 class="text-light" id="weather__desc"></h3>
@@ -79,7 +79,7 @@ const main = () => {
     </button>
 </div>
 
-<div class="col-md-4 mx-auto text-center bg-primary mt-5 p-5 ">
+<div class="col-md-4 mx-auto text-center bg-primary mt-5 p-5">
     <h1 class="text-white badge">Random forecast</h1>
     <h2 class="bg-light rounded-pill badge" id="forecast__location"></h2>
     <h3 class="text-light" id="forecast__desc"></h3>
@@ -162,7 +162,8 @@ const initContent = () => {
 // document.addEventListener('DOMContentLoaded',initContent );
 
 const initializeView = () => {
-    window.onload = initContent();
+    // window.onload = initContent();
+    document.addEventListener('onload',initContent())
 };
 
 

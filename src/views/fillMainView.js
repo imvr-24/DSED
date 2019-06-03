@@ -55,14 +55,14 @@ class UI {
         this.forecast__desc.textContent = list[index].weather[zeroIndex].main;
         this.forecast__info.textContent = list[index].weather[zeroIndex].description;
         this.forecast_icon.setAttribute('src', `/src/assets/${list[index].weather[zeroIndex].icon}.png`);
-        this.temperature_min.innerHTML = `Max Temp : ${list[index].main.temp_min} &#8451`;
+        this.temperature_min.innerHTML = `Min Temp : ${list[index].main.temp_min} &#8451`;
         this.temperature__max.innerHTML = `Max Temp : ${list[index].main.temp_max} &#8451`;
         this.rainVolume__3h.textContent = `Atmospheric pressure on the ground level : ${list[index].main.grnd_level}`;
         this.forecast__date__time.textContent = list[index].dt_txt;
 
     }
 
-    randomNumber(min = 0, max = 35) {
+    randomNumber(min = 0, max = 3) {
         return Math.floor(Math.random() * (max - min)) + min;
     }
 
