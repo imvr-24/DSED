@@ -74,5 +74,5 @@ const getWeather = () => {
         .catch(error => alert(`Citys not found`));
 };
 
-// getWeather();
+getWeather();
 // console.log(getWeather());

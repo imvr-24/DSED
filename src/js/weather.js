@@ -3,7 +3,7 @@ import {
 } from "./constants/constants.js";
 
 export class Weather {
-    constructor(city) {
+    constructor(city='guntur') {
         this.city = city;
     }
 
