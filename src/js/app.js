@@ -1,5 +1,11 @@
 // Init Weather, UI, Storage Object
 
+// import css from '../styles/bootstrap.min.css';
+// import styles from '../styles/styles.css';
+// import '../assets/';
+
+
+
 import Storage from './storage.js';
 import { UI } from '../views/fillMainView.js';
 import { Weather } from './weather.js';

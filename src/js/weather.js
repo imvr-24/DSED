@@ -2,6 +2,13 @@ import {
     config
 } from "./constants/constants.js";
 
+// import * as fetch from 'whatwg-fetch';
+// import {fetch as fetchPolyfill } from '../../node_modules/whatwg-fetch';
+// import '../../node_modules/whatwg-fetch/fetch'
+// import {fetch as fetchPolyfill} from 'whatwg-fetch';
+
+// import './fetch.js';
+
 export class Weather {
     constructor(city='guntur') {
         this.city = city;
