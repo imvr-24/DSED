@@ -33,7 +33,8 @@ class UI {
             this.desc.textContent = weather.weather[index].main;
             this.info.textContent = `${weather.weather[index].description}`;
             this.humidity.textContent = `Relative Humidity: ${weather.main.humidity}`;
-            this.icon.setAttribute('src', `../src/assets/${weather.weather[index].icon}.png`);
+            // this.icon.setAttribute('src', `../src/assets/${weather.weather[index].icon}.png`);
+            this.icon.setAttribute('src', `http://openweathermap.org/img/w/${weather.weather[index].icon}.png`);
             this.pressure.textContent = `Atmospheric pressure : ${weather.main.pressure}`;
             this.weatherCoordinates.textContent = `latitude and longitude of ${this.location.innerHTML} are : ${weather.coord.lon} ${weather.coord.lat}`;
             this.wind.textContent = `Wind Speed :${weather.wind.speed}`;
@@ -58,7 +59,7 @@ class UI {
         this.forecast__location.textContent = city.name;
         this.forecast__desc.textContent = list[index].weather[zeroIndex].main;
         this.forecast__info.textContent = list[index].weather[zeroIndex].description;
-        this.forecast_icon.setAttribute('src', `../src/assets/${list[index].weather[zeroIndex].icon}.png`);
+        this.forecast_icon.setAttribute('src', `http://openweathermap.org/img/w/${list[index].weather[zeroIndex].icon}.png`);
         this.temperature_min.innerHTML = `Min Temp : ${list[index].main.temp_min} &#8451`;
         this.temperature__max.innerHTML = `Max Temp : ${list[index].main.temp_max} &#8451`;
         this.rainVolume__3h.textContent = `Atmospheric pressure on the ground level : ${list[index].main.grnd_level}`;
