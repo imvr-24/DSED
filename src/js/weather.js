@@ -2,6 +2,8 @@ import {
     config
 } from "./constants/constants.js";
 
+import {fetch as fetchPolyfill} from 'whatwg-fetch';
+
 // import * as fetch from 'whatwg-fetch';
 // import {fetch as fetchPolyfill } from '../../node_modules/whatwg-fetch';
 // import '../../node_modules/whatwg-fetch/fetch'
@@ -16,13 +18,17 @@ export class Weather {
 
     // Fetch Weather from api.
     async getWeather() {
-        const response = await fetch(`${config.baseUrl}${this.city}&appid=${config.apiKey}&units=metric`);
+        console.log('----------');
+        const response = await fetchPolyfill(`${config.baseUrl}${this.city}&appid=${config.apiKey}&units=metric`);
+        console.log('-----------',response);
         // const response1 = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=London&appid=ddc2c672ba85e86fb279c29bb685edd1`);
         return await response.json();
     }
 
     async getHourlyForecast() {
-        const response = await fetch(`${config.forecastUrl}${this.city}&appid=${config.apiKey}&units=metric`);
+        console.log('----------');
+        const response = await fetchPolyfill(`${config.forecastUrl}${this.city}&appid=${config.apiKey}&units=metric`);
+        console.log(response);
         return await response.json();
     }
     

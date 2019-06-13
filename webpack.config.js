@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: [
-        'babel-polyfill',
         './src/js/app.js'
     ],
     output: {
@@ -24,22 +23,27 @@ module.exports = {
 
     module: {
         rules: [{
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader'
-                }
-            },
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
-            },
-            {
-                test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/,
-                use:[
-                    'file-loader'
-                ] 
-            },
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: {
+                loader: 'babel-loader'
+            }
+        },
+        {
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader'],
+        },
+        {
+            test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/,
+            use: [
+                'file-loader'
+            ]
+        },
         ]
-    }
+    },
+
+    // optimization: {
+    //     nodeEnv: 'production',
+    //     minimize: true,
+    // }
 };
