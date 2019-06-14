@@ -30,7 +30,7 @@ const header = () => {
                 <input class="form-control mr-sm-2" type="text" placeholder="Enter Your city">
             </li> -->
             <li class="nav-item active">
-                <button class="btn btn-outline-success my-2 my-sm-0"  type="button" data-toggle="modal" data-target="#locationModal">Change Location</button>
+                <button class="btn btn-outline-success my-2 my-sm-0 latestNews"  type="button" data-toggle="modal" data-target="#newsModal">Latest News</button>
             </li>
         </ul>
     </div>`;
@@ -74,7 +74,7 @@ const main = () => {
         <li class="list-group-item" id="weather__wind"></li>
     </ul>
     <hr>
-    <button type="button" class="btn btn-info" id="" data-toggle="modal" data-target="#locationModal">
+    <button type="button" class="btn btn-info" id="" data-toggle="modal" data-target="#newsModal">
         Change Location
     </button>
 </div>
@@ -92,7 +92,7 @@ const main = () => {
         <li class="list-group-item" id="date_time_utc"></li>
     </ul>
     <hr>
-    <button type="button" class="btn btn-info" id="" data-toggle="modal" data-target="#locationModal">
+    <button type="button" class="btn btn-info" id="" data-toggle="modal" data-target="#newsModal">
         Change Location
     </button>
 </div>
@@ -118,10 +118,10 @@ const footer = () => {
 const loadModal = () => {
     let modal = createNode('div');
     modal.setAttribute('class', 'modal fade');
-    modal.setAttribute('id', 'locationModal');
+    modal.setAttribute('id', 'newsModal');
     modal.setAttribute('tabindex', '-1');
     modal.setAttribute('role', 'dialog');
-    modal.setAttribute('aria-labelledby', 'locationModalLabel');
+    modal.setAttribute('aria-labelledby', 'newsModalLabel');
     modal.setAttribute('aria-hidden', 'true;');
     body.append(modal);
     let getModal = document.querySelector('.fade');
@@ -129,7 +129,7 @@ const loadModal = () => {
     <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="locationModalLabel">Choose Location</h5>
+            <h5 class="modal-title" id="newsModalLabel">Choose Location</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -152,10 +152,71 @@ const loadModal = () => {
 };
 
 
+const latestNewsModal = () => {
+    let modal = createNode('div');
+    modal.setAttribute('class', 'modal fade');
+    modal.setAttribute('id', 'newsModal');
+    modal.setAttribute('tabindex', '-1');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-labelledby', 'newsModalLabel');
+    modal.setAttribute('aria-hidden', 'true;');
+    body.append(modal);
+    let getModal = document.querySelector('.fade');
+    getModal.innerHTML = `
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Headlines</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body headlines" style="margin: 2rem 4rem";>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+    `;
+    console.log(getModal);
+};
+
+const newsApi = () => {
+
+    const news = document.querySelector('.latestNews');
+    news.addEventListener('click', () => {
+
+
+        import(/* webpackChunkName: "lazyLoaded" */ '../js/newsApi.js').then(module => {
+            module.fetchLatestNews().then(data => {
+                    Promise.all([module.fillModal(data)]);
+                });
+            });
+        });
+
+        // import(/* webpackChunkName: "lazyLoaded" */ '../js/newsApi.js').then(module => {
+        //     module.fetchLatestNews().then(data => {
+        //         import(/* webpackChunkName: "lazyLoaded" */ '../js/newsApi.js').then(module => {
+        //             module.fillModal(data);
+        //         })
+        //     });
+        // });
+
+
+    
+
+
+
+};
+
 const initContent = () => {
     header();
     main();
     loadModal();
+    latestNewsModal();
+    newsApi();
     // footer();
 };
 
@@ -163,7 +224,7 @@ const initContent = () => {
 
 const initializeView = () => {
     // window.onload = initContent();
-    document.addEventListener('onload',initContent())
+    document.addEventListener('onload', initContent())
 };
 
 

@@ -41,7 +41,9 @@ module.exports = {
         },
         ]
     },
-
+    optimization: {
+        usedExports: true
+    }
     // optimization: {
     //     nodeEnv: 'production',
     //     minimize: true,

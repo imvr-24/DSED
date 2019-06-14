@@ -50,7 +50,7 @@ class UI {
         const {
             city,
             list
-        } = forecastData;
+        } = forecastData;   
         console.log(city, list);
 
         const ui = new UI();
