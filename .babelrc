@@ -70,7 +70,7 @@
             "@babel/preset-env",
             {
                 "targets": {
-                    "esmodules": true,
+                    // "esmodules": true,
                     "browsers": [
                         "last 2 versions",
                         "safari >= 7",

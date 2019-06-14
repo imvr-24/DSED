@@ -11,6 +11,8 @@ import { UI } from '../views/fillMainView.js';
 import { Weather } from './weather.js';
 import { initializeView } from "../views/mainView.js";
 
+import regeneratorRuntime from "regenerator-runtime";
+
 initializeView();
 
 const storage = new Storage();
