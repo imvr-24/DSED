@@ -74,7 +74,7 @@ const main = () => {
         <li class="list-group-item" id="weather__wind"></li>
     </ul>
     <hr>
-    <button type="button" class="btn btn-info" id="" data-toggle="modal" data-target="#newsModal">
+    <button type="button" class="btn btn-info" id="" data-toggle="modal" data-target="#locationModal">
         Change Location
     </button>
 </div>
@@ -92,7 +92,7 @@ const main = () => {
         <li class="list-group-item" id="date_time_utc"></li>
     </ul>
     <hr>
-    <button type="button" class="btn btn-info" id="" data-toggle="modal" data-target="#newsModal">
+    <button type="button" class="btn btn-info" id="" data-toggle="modal" data-target="#locationModal">
         Change Location
     </button>
 </div>
@@ -117,14 +117,14 @@ const footer = () => {
 
 const loadModal = () => {
     let modal = createNode('div');
-    modal.setAttribute('class', 'modal fade');
-    modal.setAttribute('id', 'newsModal');
+    modal.setAttribute('class', 'modal fades');
+    modal.setAttribute('id', 'locationModal');
     modal.setAttribute('tabindex', '-1');
     modal.setAttribute('role', 'dialog');
     modal.setAttribute('aria-labelledby', 'newsModalLabel');
     modal.setAttribute('aria-hidden', 'true;');
     body.append(modal);
-    let getModal = document.querySelector('.fade');
+    let getModal = document.querySelector('.fades');
     getModal.innerHTML = `
     <div class="modal-dialog" role="document">
     <div class="modal-content">

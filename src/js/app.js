@@ -49,22 +49,22 @@ const clearInput = (e) => {
     e.value = '';
 };
 
-// document.addEventListener('DOMContentLoaded', getWeather);
+document.addEventListener('DOMContentLoaded', getWeather);
 
-// document.getElementById('weather__Change__btn').addEventListener('click', (e) => {
-//     const city = document.getElementById('city').value;
+document.getElementById('weather__Change__btn').addEventListener('click', (e) => {
+    const city = document.getElementById('city').value;
 
-//     if (city !== '' && city.length > 0) {
+    if (city !== '' && city.length > 0) {
 
-//         weather.changeLocation(city);
-//         storage.setLocationData(city);
-//         getWeather();
-//         clearInput(document.getElementById('city'));
-//         $('#locationModal').modal('hide');
-//     } else {
-//         alert('Enter a valids city');
-//     }
-// });
+        weather.changeLocation(city);
+        storage.setLocationData(city);
+        getWeather();
+        clearInput(document.getElementById('city'));
+        $('#locationModal').modal('hide');
+    } else {
+        alert('Enter a valids city');
+    }
+});
 
 const getWeather = () => {
     weather.getWeather()

@@ -30,7 +30,7 @@ async function fillModal(data) {
     console.log(optimumResults);
     for (let i = 0; i < optimumResults ; i++) {
         headDiv.insertAdjacentHTML('beforeend', `
-        <div class="card" style="width: 20rem; margin: 1rem 0">
+        <div class="card" style=" margin: 1rem 0">
             <img class="card-img-top newsImg" src="" alt="">
             <div class="card-body">
                 <p class="card-text articleTitle"> </p>
