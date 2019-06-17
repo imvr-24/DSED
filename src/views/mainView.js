@@ -189,7 +189,7 @@ const newsApi = () => {
     news.addEventListener('click', () => {
 
 
-        import(/* webpackChunkName: "lazyLoaded" */ '../js/newsApi.js').then(module => {
+        import(/* webpackChunkName: "lazyLoaded" */ '../js/Components/newsApi.js').then(module => {
             module.fetchLatestNews().then(data => {
                     Promise.all([module.fillModal(data)]);
                 });

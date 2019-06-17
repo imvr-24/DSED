@@ -48,7 +48,7 @@ async function fillModal(data) {
 
     let topheadlines = articles;
 
-    for (let i = 0; i < newsTitle.length; i++) {
+    for (let i = 0; i < optimumResults; i++) {
         newsImage[i].setAttribute('src', `${topheadlines[i].urlToImage}`)
         newsImage[i].setAttribute('alt', `${topheadlines[i].title}`)
         newsTitle[i].innerHTML = topheadlines[i].description;

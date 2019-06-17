@@ -1,6 +1,6 @@
 import {
     config
-} from "./constants/constants.js";
+} from "../constants/constants.js";
 
 // import {fetch as fetchPolyfill} from 'whatwg-fetch';
 

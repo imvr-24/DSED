@@ -7,11 +7,11 @@
 
 
 import Storage from './storage.js';
-import { UI } from '../views/fillMainView.js';
+import { UI } from '../../views/fillMainView.js';
 import { Weather } from './weather.js';
-import { initializeView } from "../views/mainView.js";
+import { initializeView } from "../../views/mainView.js";
 
-import regeneratorRuntime from "regenerator-runtime";
+// import regeneratorRuntime from "regenerator-runtime";
 
 initializeView();
 
@@ -49,7 +49,7 @@ const clearInput = (e) => {
     e.value = '';
 };
 
-document.addEventListener('DOMContentLoaded', getWeather);
+// document.addEventListener('DOMContentLoaded', getWeather);
 
 document.getElementById('weather__Change__btn').addEventListener('click', (e) => {
     const city = document.getElementById('city').value;
