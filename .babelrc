@@ -1,0 +1,93 @@
+// {
+//     "presets": [
+//         [
+//             "@babel/preset-env",
+//             {
+//                 "targets": {
+//                     "esmodules": true
+//                 }
+//             }
+//         ]
+//     ]
+// }
+// {
+//     "presets": [
+//         [
+//             "@babel/preset-env",
+//             {
+//                 "targets": {
+//                     "esmodules": true
+//                 },
+//                 // "loose": true,
+//                 "modules": false
+//             }
+//         ]
+//     ]
+// }
+// {
+//     "presets": [
+//         [
+//             "@babel/preset-env",
+//             {
+//                 "targets": {
+//                     "esmodules": true,
+//                     // "chrome": "74",
+//                     "ie": "11",
+//                     // "node": "10"
+//                     // "browsers": [
+//                     //     "last 2 versions",
+//                     //     "safari > 8",
+//                     //     "not ie < 11"
+//                     // ]
+//                 }
+//             }
+//         ]
+//     ]
+// }
+// {
+//     "presets": [
+//         [
+//             "@babel/preset-env",
+//             {
+//                 "modules": false,
+//                 "targets": {
+//                     // "browsers": [
+//                     //     "> 1%",
+//                     //     "chrome >= 60", // last ESR
+//                     //     "Firefox >= 52", // last ESR
+//                     //     "IE 11"
+//                     // ],
+//                     "uglify": true
+//                 },
+//                 // "useBuiltIns": true
+//             }
+//         ]
+//     ]
+// }
+
+
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    // "esmodules": true,
+                    "browsers": [
+                        "last 2 versions",
+                        "safari >= 7",
+                        "ie > 10"
+                    ]
+                },
+                // // "loose": true,
+                // "modules": false
+            }
+        ]
+    ],
+    "plugins": ["@babel/plugin-syntax-dynamic-import"]
+}
+
+// {
+//     "presets":["@babel/env"],
+//     "plugins": ["@babel/plugin-syntax-dynamic-import"]
+// }

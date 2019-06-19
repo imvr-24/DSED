@@ -1,0 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.bg-custom {
+    background-color: #F1F1F1;
+}
