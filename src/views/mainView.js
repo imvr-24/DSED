@@ -1,3 +1,5 @@
+
+
 const createNode = (element) => {
     return document.createElement(element);
 };
@@ -48,7 +50,7 @@ const main = () => {
     row.setAttribute('class', 'row');
     append(section, row);
     append(main, section);
-    body.append(main);
+    document.body.appendChild(main);
     const getMain = document.querySelector('.row');
     getMain.innerHTML = `
 <div class="col-md-3 text-center bg-custom mt-5 p-5 " id="updateCityEl">
@@ -123,7 +125,7 @@ const loadModal = () => {
     modal.setAttribute('role', 'dialog');
     modal.setAttribute('aria-labelledby', 'newsModalLabel');
     modal.setAttribute('aria-hidden', 'true;');
-    body.append(modal);
+    body.appendChild(modal);
     let getModal = document.querySelector('.fades');
     getModal.innerHTML = `
     <div class="modal-dialog" role="document">
@@ -160,7 +162,7 @@ const latestNewsModal = () => {
     modal.setAttribute('role', 'dialog');
     modal.setAttribute('aria-labelledby', 'newsModalLabel');
     modal.setAttribute('aria-hidden', 'true;');
-    body.append(modal);
+    body.appendChild(modal);
     let getModal = document.querySelector('.fade');
     getModal.innerHTML = `
     <div class="modal-dialog" role="document">

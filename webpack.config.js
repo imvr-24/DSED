@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: [
+        'whatwg-fetch',
         'babel-polyfill',
         './src/js/Components/app.js'
     ],
@@ -14,6 +15,8 @@ module.exports = {
     devServer: {
         contentBase: './dist'
     },
+
+    devtool: 'source-map',
 
     plugins: [
         new HtmlWebpackPlugin({
