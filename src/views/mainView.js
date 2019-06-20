@@ -190,8 +190,7 @@ const newsApi = () => {
     const news = document.querySelector('.latestNews');
     news.addEventListener('click', () => {
 
-
-        import(/* webpackChunkName: "lazyLoaded" */ '../js/Components/newsApi.js').then(module => {
+        import(/* webpackPreload: true */ '../js/Components/newsApi.js').then(module => {
             module.fetchLatestNews().then(data => {
                     Promise.all([module.fillModal(data)]);
                 });
@@ -226,7 +225,7 @@ const initContent = () => {
 
 const initializeView = () => {
     // window.onload = initContent();
-    document.addEventListener('onload', initContent())
+    document.addEventListener('onload', initContent());
 };
 
 

@@ -2,7 +2,7 @@ import {
     config
 } from "../constants/constants.js";
 
-// import {fetch as fetchPolyfill} from 'whatwg-fetch';
+import 'whatwg-fetch';
 
 // import * as fetch from 'whatwg-fetch';
 // import {fetch as fetchPolyfill } from '../../node_modules/whatwg-fetch';
