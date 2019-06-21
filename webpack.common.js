@@ -4,6 +4,7 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     entry: [
@@ -26,7 +27,7 @@ module.exports = {
         new CompressionPlugin({
             filename: "[path].gz[query]",
             algorithm: "gzip",
-            test: /\.js$|\.css$|\.html$/
+            test: /\.js$/
         }),
 
     ],
@@ -50,6 +51,23 @@ module.exports = {
                 ]
             },
         ]
+    },
+
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                uglifyOptions: {
+                    output: {
+                        comments: false
+                    },
+                    compress: {
+                        drop_console: true
+                    }
+                },
+                parallel: true
+            })
+        ]
     }
+
 
 };
