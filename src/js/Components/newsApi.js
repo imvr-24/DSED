@@ -8,7 +8,8 @@ const fetchLatestNews = async () => {
     const date = '2019-06-4';
 
 
-    let url = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apiKey}&q=${searchQuery}&from=${date}&sortBy=popularity`;
+    // let url = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apiKey}&q=${searchQuery}&from=${date}&sortBy=popularity`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apiKey}&q=${searchQuery}`;
     var req = new Request(url);
     let news = fetch(req)
     const response = await news;
